@@ -1,0 +1,9 @@
+<p>::= <defp>{::}<callp>
+<defp> ::= def p():{:import pandas as pd{::}import numpy as np{::}def my_pearson(x, y):{::}	return np.abs(np.corrcoef(x, y)[0,1]){::}df = pd.read_csv("'"c:/mc-training.txt"'"){::}df2 = pd.read_csv("'"c:/mc-validation.txt"'"){::}x, x0, x1, x2, x3, x4 = df["'"response"'"].to_numpy(), df["'"x0"'"].to_numpy(), df["'"x1"'"].to_numpy(), df["'"x2"'"].to_numpy(), df["'"x3"'"].to_numpy(), df["'"x4"'"].to_numpy(){::}y, y0, y1, y2, y3, y4 = df2["'"response"'"].to_numpy(), df2["'"y0"'"].to_numpy(), df2["'"y1"'"].to_numpy(), df2["'"y2"'"].to_numpy(), df2["'"y3"'"].to_numpy(), df2["'"y4"'"].to_numpy(){::}aux = "'"<expr>"'"{::}aux2=aux.replace("'"x"'","'"y"'"){::}df2["'"new"'"] = eval(aux2){::}return my_pearson(y, df2["'"new"'"].to_numpy()):}
+
+<callp> ::= XXX_output_XXX = p()
+
+<expr> ::= <digit> | <var> | (<var> + <digit>) | (<var> * <digit>) | (<var> + <var>) | (<var> * <var>) | (<var> * <var> * <var>) | np.sin(<var>) | np.tanh(<var>) | np.log(<var>) 
+<var> ::= x0 | x1 | x2 | x3 | x4
+<digit> ::= <c><c>.<c><c>
+<c>  ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
