@@ -2,6 +2,10 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+# Purpose
+This repository has the code to reproduce the paper:
+Jorge Martinez-Gil: Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution. [\[arXiv preprint\]](https://arxiv.org/abs/2307.00925), July 2023.
+
 # Introduction
 
 Semantic similarity measures are widely used in natural language processing to catalyze various computer-related tasks. However, no single semantic similarity measure is the most appropriate for all tasks, and researchers often use ensemble strategies to ensure performance. This research work proposes a method for automatically designing semantic similarity ensembles. In fact, our proposed method uses grammatical evolution, for the first time, to automatically select and aggregate measures from a pool of candidates to create an ensemble that maximizes correlation to human judgment.
@@ -16,17 +20,25 @@ The method is evaluated on several benchmark datasets and compared to state-of-t
 - Significant improvements in similarity assessment accuracy.
 
 # Install
-``` pip install -r requirements.txt```
+This research is heavily based in this work:
+
+    Fenton, M., McDermott, J., Fagan, D., Forstenlechner, S., Hemberg, E., and O'Neill, M. 
+    PonyGE2: Grammatical Evolution in Python. arXiv preprint, arXiv:1703.08535, 2017.
+
+Therefore, for making it running it is necessary to install the PonyGE2 framework first:
+[PonyGE2](https://github.com/PonyGE/PonyGE2)
 
 # Datasets
 The approach has been tested on the benchmark datasets MC30 and GeReSiD50. For more information, please refer to the paper.
 
 # Use
-This approach uses mostly the Pony2GE framework. It is necessary to install this framework and overwrite the files with the files from this repository.
+This approach uses mostly the Pony2GE framework. It is necessary to install this framework and overwrite the files with the files from this repository. Then,
+
+```cd .\PonyGE2\src```
+```python ponyge.py --parameters (one file with parameters, see proper folder)```
 
 # Citation
-If you use this approach, please cite:
-
+If you use this paper, please cite:
 ```
 @article{martinez2003c,
   author       = {Jorge Martinez-Gil},
@@ -41,7 +53,6 @@ If you use this approach, please cite:
   eprint       = {2307.00925}
 }
 
-```
-  
+``` 
 ## License
 MIT
