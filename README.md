@@ -1,10 +1,12 @@
+
 # Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Purpose
 This repository has the code to reproduce the paper:
-Jorge Martinez-Gil: Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution. [\[arXiv preprint\]](https://arxiv.org/abs/2307.00925), July 2023.
+
+ - Jorge Martinez-Gil: Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution. [\[arXiv preprint\]](https://arxiv.org/abs/2307.00925), July 2023.
 
 # Introduction
 
@@ -35,6 +37,7 @@ The approach has been tested on the benchmark datasets MC30 and GeReSiD50. For m
 This approach uses mostly the Pony2GE framework. It is necessary to install this framework and overwrite the files with the files from this repository. Then,
 
 ```cd .\PonyGE2\src```
+
 ```python ponyge.py --parameters (one file with parameters, see proper folder)```
 
 # Citation
