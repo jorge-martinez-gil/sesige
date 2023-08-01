@@ -44,5 +44,3 @@ df_preds = pd.DataFrame({'Actual': y_test.squeeze(), 'Predicted': y_pred.squeeze
 print (df_preds)
 print (my_pearson(y_test, y_pred))
 print (my_spearman(y_test, y_pred))
-
-
