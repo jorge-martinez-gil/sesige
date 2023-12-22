@@ -1,47 +1,45 @@
-
 # Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-2307.00925-b31b1b.svg)](https://arxiv.org/abs/2307.00925)
 
-# Purpose
-This repository has the code to reproduce the paper:
+## 🌟  Introduction
 
- - Jorge Martinez-Gil: Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution. [\[arXiv preprint\]](https://arxiv.org/abs/2307.00925), July 2023.
+Semantic similarity measures are essential in natural language processing, aiding a myriad of computer-related tasks. Our research introduces an innovative method for **automatically designing semantic similarity ensembles** using grammatical evolution, marking its first-time application in this domain.
 
-# Introduction
+##  📊 Features
 
-Semantic similarity measures are widely used in natural language processing to catalyze various computer-related tasks. However, no single semantic similarity measure is the most appropriate for all tasks, and researchers often use ensemble strategies to ensure performance. This research work proposes a method for automatically designing semantic similarity ensembles. In fact, our proposed method uses grammatical evolution, for the first time, to automatically select and aggregate measures from a pool of candidates to create an ensemble that maximizes correlation to human judgment.
+- **Automatic Ensemble Design**: Utilizes grammatical evolution for ensemble creation.
+- **Dynamic Measure Selection**: Aggregates various measures to form an optimized ensemble.
+- **Benchmark Evaluations**: Tested against top-tier ensembles on standard datasets.
+- **Accuracy Improvements**: Demonstrates notable enhancements in similarity assessments.
 
-The method is evaluated on several benchmark datasets and compared to state-of-the-art ensembles, showing that it can significantly improve similarity assessment accuracy and outperform existing methods in some cases. As a result, our research demonstrates the potential of using grammatical evolution to automatically compare text and proves the benefits of using ensembles for semantic similarity tasks.
+## 🛠️ Install
 
-# Features
-
-- Automatic design of semantic similarity ensembles using grammatical evolution.
-- Selection and aggregation of measures from a pool of candidates to create an ensemble.
-- Evaluation on benchmark datasets and comparison with state-of-the-art ensembles.
-- Significant improvements in similarity assessment accuracy.
-
-# Install
 This research is heavily based in this work:
 
     Fenton, M., McDermott, J., Fagan, D., Forstenlechner, S., Hemberg, E., and O'Neill, M. 
     PonyGE2: Grammatical Evolution in Python. arXiv preprint, arXiv:1703.08535, 2017.
 
 Therefore, for making it running it is necessary to install the PonyGE2 framework first:
-[PonyGE2](https://github.com/PonyGE/PonyGE2)
 
-# Datasets
-The approach has been tested on the benchmark datasets MC30 and GeReSiD50. For more information, please refer to the paper.
+1. Install [PonyGE2](https://github.com/PonyGE/PonyGE2).
+2. Clone this repository.
+3. Overwrite the PonyGE2 files with the files from this repository.
 
-# Use
-This approach uses mostly the Pony2GE framework. It is necessary to install this framework and overwrite the files with the files from this repository. Then,
+## 📈 Datasets
+We evaluated our approach on MC30 and GeReSiD50 datasets. For more details, refer to our paper.
 
-```cd .\PonyGE2\src```
+## ⚙️ Usage
+After installing the Pony2GE framework:
 
-```python ponyge.py --parameters (one file with parameters, see proper folder)```
+```bash
+cd ./PonyGE2/src
+python ponyge.py --parameters <your_parameter_file>
+```
 
-# Citation
-If you use this paper, please cite:
+## 📚 Citation
+If you use our work, please cite:
+
 ```
 @article{martinez2003c,
   author       = {Jorge Martinez-Gil},
@@ -56,6 +54,6 @@ If you use this paper, please cite:
   eprint       = {2307.00925}
 }
 
-``` 
-## License
-MIT
+```
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
