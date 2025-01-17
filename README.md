@@ -2,49 +2,115 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2307.00925-b31b1b.svg)](https://arxiv.org/abs/2307.00925)
 
-## 🌟  Introduction
+## 🌟 Overview
 
-Semantic similarity measures are essential in natural language processing, aiding a myriad of computer-related tasks. Our research introduces an innovative method for **automatically designing semantic similarity ensembles** using grammatical evolution, marking its first-time application in this domain.
+Semantic similarity measures play a pivotal role in natural language processing (NLP) tasks. This repository accompanies the paper [**"Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution"**](https://arxiv.org/abs/2307.00925), which introduces a **Grammatical Evolution (GE)-based framework** for **automatic design and optimization of semantic similarity ensembles**. The proposed method enables the dynamic creation of highly accurate and interpretable ensembles, outperforming state-of-the-art techniques on benchmark datasets.
 
-##  📊 Features
+---
 
-- **Automatic Ensemble Design**: Utilizes grammatical evolution for ensemble creation.
-- **Dynamic Measure Selection**: Aggregates various measures to form an optimized ensemble.
-- **Benchmark Evaluations**: Tested against top-tier ensembles on standard datasets.
-- **Accuracy Improvements**: Demonstrates notable enhancements in similarity assessments.
+## ✨ Key Contributions
 
-## 🛠️ Install
+- **Novel Application of Grammatical Evolution**: First use of GE for designing semantic similarity ensembles.
+- **Dynamic Aggregation**: Combines multiple similarity measures to create optimized ensembles.
+- **Interpretable and Accurate**: Balances high performance with model interpretability.
+- **Benchmark Comparisons**: Demonstrates superiority over existing ensemble methods on MC30 and GeReSiD50 datasets.
 
-This research is heavily based in this work:
+---
 
-    Fenton, M., McDermott, J., Fagan, D., Forstenlechner, S., Hemberg, E., and O'Neill, M. 
-    PonyGE2: Grammatical Evolution in Python. arXiv preprint, arXiv:1703.08535, 2017.
+## 📊 Features
 
-Therefore, for making it running it is necessary to install the PonyGE2 framework first:
+- Automated generation of semantic similarity ensembles guided by Backus-Naur Form (BNF) grammar.
+- Support for correlation-based optimization using Pearson and Spearman metrics.
+- Integration with the **PonyGE2** framework for evolutionary computation.
+- Results validated on standard datasets: **MC30** and **GeReSiD50**.
 
-1. Install [PonyGE2](https://github.com/PonyGE/PonyGE2).
-2. Clone this repository.
-3. Overwrite the PonyGE2 files with the files from this repository.
+---
 
-## 📈 Datasets
-We evaluated our approach on MC30 and GeReSiD50 datasets. For more details, refer to our paper.
+## 🛠️ Installation
+
+To run the experiments, you need to install and set up the **PonyGE2** framework:
+
+1. Clone the [PonyGE2 repository](https://github.com/PonyGE/PonyGE2).
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/<YourRepo>/semantic-similarity-ge.git
+   ```
+3. Overwrite the **PonyGE2** files with those provided in this repository:
+   ```bash
+   cp -r ./semantic-similarity-ge/* ./PonyGE2/
+   ```
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## 📈 Evaluation Datasets
+
+### 1. MC30
+- Contains 30 word pairs with semantic similarity scores based on human judgments.
+- Focuses on general-purpose semantic similarity.
+
+### 2. GeReSiD50
+- Contains 50 phrase pairs with semantic similarity ratings from geospatial research.
+- Includes domain-specific textual data for testing ensemble generalization.
+
+---
 
 ## ⚙️ Usage
-After installing the Pony2GE framework:
 
-```bash
-cd ./PonyGE2/src
-python ponyge.py --parameters <your_parameter_file>
-```
+After setting up the **PonyGE2** framework:
+
+1. Navigate to the `src` directory of **PonyGE2**:
+   ```bash
+   cd ./PonyGE2/src
+   ```
+2. Run the grammatical evolution process using the provided parameter file:
+   ```bash
+   python ponyge.py --parameters ./parameters/semantic_similarity.txt
+   ```
+3. View results in the output directory specified in the parameters file.
+
+---
+
+## 🧪 Results Summary
+
+**Performance Metrics:**
+- Evaluated using Pearson Correlation Coefficient (PCC) and Spearman Rank Correlation Coefficient (SRCC).
+- Achieved superior performance on MC30 and GeReSiD50 benchmarks compared to state-of-the-art methods.
+
+| **Dataset** | **Metric** | **GE** | **State-of-the-Art** |
+|-------------|------------|--------|----------------------|
+| MC30        | PCC        | 0.794  | 0.845 (LGP)         |
+|             | SRCC       | 0.859  | 0.822 (LGP)         |
+| GeReSiD50   | PCC        | 0.743  | 0.756 (LGP)         |
+|             | SRCC       | 0.779  | 0.752 (LGP)         |
+
+---
+
+## 🧬 Technical Details
+
+### Fitness Function
+- Optimized for correlation with human judgment using PCC and SRCC.
+
+### Genetic Operators
+- **Crossover**: Variable one-point crossover with a probability of 0.8.
+- **Mutation**: Integer flip per codon.
+
+### Grammatical Evolution
+- Defined using BNF grammar for generating ensemble configurations.
+
+---
 
 ## 📚 Citation
-If you use our work, please cite:
 
-```
+If you use this work in your research, please cite:
+
+```bibtex
 @article{martinez2003c,
   author       = {Jorge Martinez-Gil},
-  title        = {Automatic Design of Semantic Similarity Ensembles Using Grammatical
-                  Evolution},
+  title        = {Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution},
   journal      = {CoRR},
   volume       = {abs/2307.00925},
   year         = {2023},
@@ -53,7 +119,10 @@ If you use our work, please cite:
   eprinttype   = {arXiv},
   eprint       = {2307.00925}
 }
-
 ```
+
+---
+
 ## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+This project is licensed under the MIT License. See the LICENSE file for details.
