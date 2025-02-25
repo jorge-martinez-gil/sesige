@@ -4,40 +4,43 @@
 
 ## 🌟 Overview
 
-Semantic similarity measures play a pivotal role in natural language processing (NLP) tasks. This repository accompanies the paper [**"Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution"**](https://arxiv.org/abs/2307.00925), which introduces a **Grammatical Evolution (GE)-based framework** for **automatic design and optimization of semantic similarity ensembles**. The proposed method enables the dynamic creation of highly accurate and interpretable ensembles, outperforming state-of-the-art techniques on benchmark datasets.
+This repository accompanies the paper [**"Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution"**](https://arxiv.org/abs/2307.00925), which introduces a **Grammatical Evolution (GE)-based framework** for the **automatic design and optimization of semantic similarity ensembles**. Our method uses evolutionary computation to create optimized, interpretable ensembles that outperform state-of-the-art techniques on genetic ensembles when solving benchmark datasets.
 
 ---
 
 ## ✨ Key Contributions
 
-- **Novel Application of Grammatical Evolution**: First use of GE for designing semantic similarity ensembles.
-- **Dynamic Aggregation**: Combines multiple similarity measures to create optimized ensembles.
-- **Interpretable and Accurate**: Balances high performance with model interpretability.
-- **Benchmark Comparisons**: Demonstrates superiority over existing ensemble methods on MC30 and GeReSiD50 datasets.
+- **First Application of Grammatical Evolution in Semantic Similarity**: Introducing a novel approach to ensemble design.
+- **Dynamic Similarity Aggregation**: Automatically selects and combines multiple similarity measures for optimal performance.
+- **Interpretability and Accuracy**: Ensuring high correlation with human judgments while maintaining transparency.
+- **Benchmark Validation**: Rigorous evaluation against established datasets (MC30, GeReSiD50, WS353).
 
 ---
 
 ## 📊 Features
 
-- Automated generation of semantic similarity ensembles guided by Backus-Naur Form (BNF) grammar.
-- Support for correlation-based optimization using Pearson and Spearman metrics.
-- Integration with the **PonyGE2** framework for evolutionary computation.
-- Results validated on standard datasets: **MC30** and **GeReSiD50**.
+- **Automated Ensemble Learning**: Uses **Backus-Naur Form (BNF) grammar** to guide the evolutionary process.
+- **Optimized for Semantic Similarity**: Evaluates ensembles based on **Pearson** and **Spearman** correlation coefficients.
+- **Seamless Integration with PonyGE2**: Built on the **PonyGE2** framework for genetic programming.
+- **Extensive Benchmarking**: Compared with state-of-the-art methods across multiple datasets.
 
 ---
 
 ## 🛠️ Installation
 
-To run the experiments, you need to install and set up the **PonyGE2** framework:
+To set up the environment and run experiments:
 
-1. Clone the [PonyGE2 repository](https://github.com/PonyGE/PonyGE2).
+1. Clone the [PonyGE2 repository](https://github.com/PonyGE/PonyGE2):
+   ```bash
+   git clone https://github.com/PonyGE/PonyGE2.git
+   ```
 2. Clone this repository:
    ```bash
-   git clone https://github.com/<YourRepo>/semantic-similarity-ge.git
+   git clone https://github.com/jorge-martinez-gil/sesige.git
    ```
-3. Overwrite the **PonyGE2** files with those provided in this repository:
+3. Overwrite **PonyGE2** files with those provided in this repository:
    ```bash
-   cp -r ./semantic-similarity-ge/* ./PonyGE2/
+   cp -r ./sesige/* ./PonyGE2/
    ```
 4. Install dependencies:
    ```bash
@@ -46,60 +49,59 @@ To run the experiments, you need to install and set up the **PonyGE2** framework
 
 ---
 
-## 📈 Evaluation Datasets
+## 📈 Datasets
 
-### 1. MC30
-- Contains 30 word pairs with semantic similarity scores based on human judgments.
-- Focuses on general-purpose semantic similarity.
+We evaluate our method using the following benchmark datasets:
 
-### 2. GeReSiD50
-- Contains 50 phrase pairs with semantic similarity ratings from geospatial research.
-- Includes domain-specific textual data for testing ensemble generalization.
+- **MC30**: 30 word pairs with human-annotated similarity scores.
+- **GeReSiD50**: 50 phrase pairs from geospatial research, assessing domain-specific generalization.
+- **WS353**: 353 words widely used for evaluating semantic similarity in NLP.
 
 ---
 
 ## ⚙️ Usage
 
-After setting up the **PonyGE2** framework:
+To run the **Grammatical Evolution** process:
 
 1. Navigate to the `src` directory of **PonyGE2**:
    ```bash
    cd ./PonyGE2/src
    ```
-2. Run the grammatical evolution process using the provided parameter file:
+2. Execute the training script with the provided parameter file:
    ```bash
    python ponyge.py --parameters ./parameters/semantic_similarity.txt
    ```
-3. View results in the output directory specified in the parameters file.
+3. Results are stored in the output directory specified in the parameter file.
 
 ---
 
-## 🧪 Results Summary
+## 🧪 Experimental Results
 
-**Performance Metrics:**
-- Evaluated using Pearson Correlation Coefficient (PCC) and Spearman Rank Correlation Coefficient (SRCC).
-- Achieved superior performance on MC30 and GeReSiD50 benchmarks compared to state-of-the-art methods.
+We evaluated the **GE-based ensembles** against state-of-the-art methods, using **Pearson (PCC)** and **Spearman (SRCC)** correlation coefficients:
 
 | **Dataset** | **Metric** | **GE** | **State-of-the-Art** |
-|-------------|------------|--------|----------------------|
-| MC30        | PCC        | 0.794  | 0.845 (LGP)         |
-|             | SRCC       | 0.859  | 0.822 (LGP)         |
-| GeReSiD50   | PCC        | 0.743  | 0.756 (LGP)         |
-|             | SRCC       | 0.779  | 0.752 (LGP)         |
+|------------|-----------|--------|----------------------|
+| MC30       | PCC       | 0.794  | 0.845 (LGP)         |
+|            | SRCC      | 0.859  | 0.822 (LGP)         |
+| GeReSiD50  | PCC       | 0.743  | 0.756 (LGP)         |
+|            | SRCC      | 0.779  | 0.752 (LGP)         |
+| WS353      | PCC       | 0.827  | 0.817 (LGP)         |
+|            | SRCC      | 0.817  | 0.817 (LGP)         |
 
 ---
 
 ## 🧬 Technical Details
 
 ### Fitness Function
-- Optimized for correlation with human judgment using PCC and SRCC.
+- Optimized to maximize correlation with human-annotated similarity judgments (PCC & SRCC).
 
 ### Genetic Operators
-- **Crossover**: Variable one-point crossover with a probability of 0.8.
+- **Crossover**: Variable one-point crossover (probability = 0.8).
 - **Mutation**: Integer flip per codon.
 
 ### Grammatical Evolution
-- Defined using BNF grammar for generating ensemble configurations.
+- Utilizes **BNF grammar** to define ensemble configurations.
+- Evolves candidate ensembles iteratively through genetic programming.
 
 ---
 
@@ -108,7 +110,7 @@ After setting up the **PonyGE2** framework:
 If you use this work in your research, please cite:
 
 ```bibtex
-@article{martinez2003c,
+@article{martinez2023semanticGE,
   author       = {Jorge Martinez-Gil},
   title        = {Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution},
   journal      = {CoRR},
@@ -125,4 +127,4 @@ If you use this work in your research, please cite:
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the **MIT License**. See the LICENSE file for details.
