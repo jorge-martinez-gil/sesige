@@ -89,20 +89,6 @@ We evaluated the **GE-based ensembles** against state-of-the-art methods, using 
 | WS353      | PCC       | 0.827  | 0.817 (LGP)         |
 |            | SRCC      | 0.817  | 0.817 (LGP)         |
 
----
-
-## 🧬 Technical Details
-
-### Fitness Function
-- Optimized to maximize correlation with human-annotated similarity judgments (PCC & SRCC).
-
-### Genetic Operators
-- **Crossover**: Variable one-point crossover (probability = 0.8).
-- **Mutation**: Integer flip per codon.
-
-### Grammatical Evolution
-- Utilizes **BNF grammar** to define ensemble configurations.
-- Evolves candidate ensembles iteratively through genetic programming.
 
 ---
 
