@@ -251,10 +251,4 @@ Please open an issue or pull request to get started.
 
 This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
 
----
 
-<div align="center">
-
-*Built with ❤️ and evolutionary computation*
-
-</div>
