@@ -219,16 +219,16 @@ GE-based ensembles evaluated against state-of-the-art genetic methods (**LGP** =
 If SeSiGE contributes to your research, please cite:
 
 ```bibtex
-@article{martinez2023semanticGE,
-  author       = {Jorge Martinez-Gil},
-  title        = {Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution},
-  journal      = {CoRR},
-  volume       = {abs/2307.00925},
-  year         = {2023},
-  url          = {https://doi.org/10.48550/arXiv.2307.00925},
-  doi          = {10.48550/arXiv.2307.00925},
-  eprinttype   = {arXiv},
-  eprint       = {2307.00925}
+@article{martinezgil2027,
+    title = {Automatic design of semantic similarity ensembles using grammatical evolution},
+    journal = {Applied Soft Computing},
+    volume = {204},
+    pages = {116486},
+    year = {2027},
+    issn = {1568-4946},
+    doi = {https://doi.org/10.1016/j.asoc.2026.116486},
+    url = {https://www.sciencedirect.com/science/article/pii/S1568494626019344},
+    author = {Jorge Martinez-Gil},
 }
 ```
 
