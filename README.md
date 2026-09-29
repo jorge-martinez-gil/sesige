@@ -7,6 +7,7 @@
 **Automatically evolving optimal ensembles of semantic similarity measures — no hand-crafting required.**
 
 [![arXiv](https://img.shields.io/badge/arXiv-2307.00925-b31b1b.svg)](https://arxiv.org/abs/2307.00925)
+[![Published in Applied Soft Computing](https://img.shields.io/badge/Published-Applied%20Soft%20Computing-0f62fe.svg)](https://www.sciencedirect.com/science/article/pii/S1568494626019344)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![PonyGE2](https://img.shields.io/badge/built%20on-PonyGE2-green.svg)](https://github.com/PonyGE/PonyGE2)
@@ -17,11 +18,11 @@
 
 ## 🌟 What Is This?
 
-Measuring semantic similarity is a fundamental challenge in NLP. Individual similarity measures (path-based, information-content, distributional) each capture different aspects of meaning — but **which one should you trust, and how should you combine them?**
+Measuring semantic similarity is a fundamental challenge in NLP. Individual similarity measures (path-based, information-content, distributional) each capture different aspects of meaning — but [...] 
 
 **SeSiGE answers this automatically.**
 
-This repository accompanies the paper [**"Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution"**](https://arxiv.org/abs/2307.00925). It introduces a **Grammatical Evolution (GE)** framework that *evolves* the optimal mathematical combination of multiple similarity measures, producing ensembles that:
+This repository accompanies the paper [**"Automatic Design of Semantic Similarity Ensembles Using Grammatical Evolution"**](https://arxiv.org/abs/2307.00925), which has now been **accepted and published in Applied Soft Computing**: [https://www.sciencedirect.com/science/article/pii/S1568494626019344](https://www.sciencedirect.com/science/article/pii/S1568494626019344). It introduces a **Grammatical Evolution** approach to automatically design semantic similarity ensembles.
 
 - 🎯 **Outperform hand-crafted baselines** on standard benchmarks
 - 🔍 **Remain fully interpretable** — the evolved formula is human-readable
@@ -55,7 +56,7 @@ graph TD
 
 ### The Core Idea
 
-The evolution searches over the space of mathematical expressions defined by a **Backus-Naur Form (BNF) grammar**. Each individual in the population encodes a candidate formula combining up to 5 pre-computed similarity features (`x0`–`x4`). The fitness of each formula is its correlation with human-annotated ground truth.
+The evolution searches over the space of mathematical expressions defined by a **Backus-Naur Form (BNF) grammar**. Each individual in the population encodes a candidate formula combining up to 5 pre-computed semantic similarity features.
 
 **Example evolved expression:**
 
@@ -250,5 +251,3 @@ Please open an issue or pull request to get started.
 ## 📄 License
 
 This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
-
-
